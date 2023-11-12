@@ -142,5 +142,3 @@ void *buscar_elemento(DLList * dl, void * key, int(cmp)(void*, void*)){
   }
   return NULL;
 }
-
-
