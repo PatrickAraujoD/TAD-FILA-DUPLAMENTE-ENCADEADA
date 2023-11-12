@@ -1,5 +1,7 @@
 #ifndef __DLLIST__
 #define __DLLIST__
+#define true 1
+#define false 0
 
 typedef struct __comida__{
   int gramas;
@@ -10,21 +12,23 @@ typedef struct __comida__{
 typedef struct __slnode__ {
   struct __slnode__ *next, *prev;
   void *data;
-}SLNode;
+}DLNode;
 
 typedef struct __dllist__ {
-  SLNode *first;
-  SLNode *cur;
+  DLNode *first;
+  DLNode *cur;
 }DLList;
 
 
 DLList *criar_lista();
-void inserir_elemento(DLList *dl, void *data);
+int inserir_elemento(DLList *dl, void *data);
 int remover_elemento(DLList * dl, void * key, int(cmp)(void*, void*));
+int remover_todos_elementos(DLList *ld);
 void *buscar_elemento(DLList * dl, void * key, int(cmp)(void*, void*));
 void listar_elementos(DLList * dl);
 int destruir_lista(DLList *ld);
 int compareComidas(void *a, void *b);
 void printar_elementos(Comida *novaComida);
+int lista_vazia(DLList *ld);
 
 #endif
