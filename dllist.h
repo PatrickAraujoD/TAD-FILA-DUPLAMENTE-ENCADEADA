@@ -9,8 +9,8 @@ typedef struct __comida__{
   float preco;
 }Comida;
 
-typedef struct __slnode__ {
-  struct __slnode__ *next, *prev;
+typedef struct __dlnode__ {
+  struct __dlnode__ *next, *prev;
   void *data;
 }DLNode;
 
